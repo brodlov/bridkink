@@ -38,13 +38,6 @@
       "id": "7151b3293d8c4adfbb1a48c016e18434" // IMPORTANT: Change this to your KV namespace ID
     }
   ],
-  "r2_buckets": [
-    {
-      "binding": "R2",
-      "preview_bucket_name": "bridkink",
-      "bucket_name": "bridkink" // IMPORTANT: Change this to your R2 bucket name, or create one with `wrangler r2 bucket create sink`
-    }
-  ],
   "triggers": {
     "crons": ["0 0 * * *"] // Run backup task daily at 00:00 UTC
   }
