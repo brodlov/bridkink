@@ -123,7 +123,7 @@ export default eventHandler(async (event) => {
         return html
       }
 
-      if (link.cloaking) {
+      if (true) {
         const baseUrl = `${getRequestProtocol(event)}://${getRequestHost(event)}`
         const html = generateCloakingHtml(link, buildTarget(link.url), baseUrl)
         setHeader(event, 'Content-Type', 'text/html; charset=utf-8')
