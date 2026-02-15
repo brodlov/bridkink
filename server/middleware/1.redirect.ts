@@ -108,7 +108,7 @@ export default eventHandler(async (event) => {
 
       const userAgent = getHeader(event, 'user-agent') || ''
       const query = getQuery(event)
-      const shouldRedirectWithQuery = link.redirectWithQuery ?? redirectWithQuery
+      const shouldRedirectWithQuery = true //>>>> link.redirectWithQuery ?? redirectWithQuery
       const buildTarget = (url: string) => shouldRedirectWithQuery ? withQuery(url, query) : url
 
       const deviceRedirectUrl = getDeviceRedirectUrl(userAgent, link)
@@ -123,6 +123,7 @@ export default eventHandler(async (event) => {
         return html
       }
 
+      //>>>> if (link.cloaking)
       if (true) {
         const baseUrl = `${getRequestProtocol(event)}://${getRequestHost(event)}`
         const html = generateCloakingHtml(link, buildTarget(link.url), baseUrl)
